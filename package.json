@@ -1,0 +1,36 @@
+{
+  "name": "create-solidfun",
+  "license": "MIT",
+  "type": "module",
+  "version": "0.0.1",
+  "main": "src/index.js",
+  "author": "Christopher Carrington",
+  "bin": {
+    "create-solidfun": "./index.js"
+  },
+  "scripts": {
+    "dev": "fun build local && vinxi dev",
+    "build": "vinxi build",
+    "start": "vinxi start",
+    "version": "vinxi version",
+    "publish": "npm publish --access public"
+  },
+  "keywords": [],
+  "description": "",
+  "dependencies": {
+    "@solid-cli/core": "^0.0.26",
+    "@solidjs/meta": "^0.29.4",
+    "@solidjs/router": "^0.15.0",
+    "@solidjs/start": "^1.1.0",
+    "chalk": "^5.4.1",
+    "execa": "^9.5.2",
+    "inquirer": "^12.5.2",
+    "node-pty": "^1.0.0",
+    "ora": "^8.2.0",
+    "solid-js": "^1.9.5",
+    "solidfun": "^0.0.27"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.1"
+  }
+}
