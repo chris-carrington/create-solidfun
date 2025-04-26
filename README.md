@@ -14,7 +14,8 @@ npm create solidfun # bash 🧙
 ```bash
 nvm use 22
 npm create solid # basic / typescript
-npm install solidfun -P @types/node -D
+npm install solidfun
+npm install @types/node -D
 ```
 
 
