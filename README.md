@@ -5,7 +5,7 @@
 
 # How?
 ```bash
-npm create solidfun # bash 🧙
+npx create-solidfun@latest # bash 🧙
 ```
 
 
