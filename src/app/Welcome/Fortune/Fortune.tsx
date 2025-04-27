@@ -17,7 +17,7 @@ export default new Route({
 
     async function onClick() {
       const params = { id: randomBetween(0, fortunes.length - 1) } 
-      const res = await fe.GET('/api/fortune/:id', {params, loadKey: 'fortune'})
+      const res = await fe.GET('/api/fortune/:id', {params, bitKey: 'fortune'})
 
       if (res.data) setFortune(res.data.fortune)
       else if (res.error) alert(res.error.message)
@@ -30,7 +30,7 @@ export default new Route({
         <div class="title">Fortune 🧚‍♀️</div>
 
         <button class="brand gold" onClick={onClick}>
-          <Show when={fe.isLoading('fortune')} fallback={<ButtonText fortune={fortune} />}>
+          <Show when={fe.bits.isOn('fortune')} fallback={<ButtonText fortune={fortune} />}>
             <span class="load-spin--two"></span>
           </Show>
         </button>
