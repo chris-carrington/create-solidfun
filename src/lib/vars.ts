@@ -19,6 +19,16 @@ export const characters = {
 
 
 export const fortunes = [
+  'Kindness is your superpower',
+  'Your inner light guides the way',
+  'Every breath you take is a gift',
+  'Your laughter spreads sunshine',
+  'A shared smile bridges distant hearts',
+  'Peace grows when you breathe deeply',
+  'Your presence brings comfort and peace',
+  'Your wisdom guides you gently forward',
+  'Bright ideas sprout in calm minds',
+  'Compassion opens doors to new joys',
   'A kind word from you will yield kindness in return',
   'Joy comes to those who smile gently at the world',
   'Your heart is a wellspring of endless compassion',
@@ -36,5 +46,6 @@ export const fortunes = [
   'A moment of stillness brings profound clarity',
   'Your intuition guides you toward fulfilling paths',
   'Every challenge hides a seed of growth',
+  'A fresh start awaits your bold step',
   'Your generosity returns to you a hundredfold'
 ] as const

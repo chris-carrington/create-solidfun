@@ -49,7 +49,7 @@ class Build {
         '@solidjs/router': '^0.15.0',
         '@solidjs/start': '^1.1.0',
         'solid-js': '^1.9.5',
-        solidfun: '^0.0.30',
+        solidfun: '^0.0.32',
         vinxi: '^0.5.3',
       },
       engines: { node: '>=22' },
@@ -163,15 +163,15 @@ ${cuteString('Please enter a 1, 2, or 3 and then press [return]:', 'magenta', 'b
 
   async onSuccess() {
     console.log(`
-${cuteString('🎉 Congratulations! You have created a Solid Fun project!', 'green', 'bold', 'underline')}
+${cuteString(`🎉 Congratulations! "${this.projectName}" created! 🎉`, 'green', 'bold', 'underline')}
 
-${cuteString('🚀 3 steps to run it now:', 'blue', 'bold')}
+${cuteString('🤓 3 quick steps to dev please:', 'blue', 'bold')}
 
-   ${cuteString('1)', 'blue')} ${cuteString('cd ./' + this.projectName, 'cyan')}
+   ${cuteString('1)', 'blue')} ${cuteString('cd ' + this.projectName, 'cyan')}
    ${cuteString('2)', 'blue')} ${cuteString('npm install', 'cyan')}
    ${cuteString('3)', 'blue')} ${cuteString('npm run dev', 'cyan')}
 
-${cuteString('💖 Thanks for creating w/ Solid Fun! ✨ Docs: https://github.com/chris-carrington/solidfun', 'dim')}`)
+${cuteString('💖 Thanks for creating w/ Solid Fun! ✨ Docs: https://github.com/chris-carrington/solidfun\n', 'bold')}`)
   }
 
 

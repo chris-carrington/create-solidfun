@@ -8,7 +8,7 @@ export default () => {
     <nav>
       <Counter />
       <A path="/" activeClass="active" end={true} class="brand">Home</A>
-      <A path="/fortune" activeClass="active" class="brand">Fortune</A>
+      <A path="/fortunes" activeClass="active" class="brand">Fortunes</A>
       <A path="/smooth" activeClass="active" class="brand">Smooth</A>
     </nav>
   </>

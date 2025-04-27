@@ -5,10 +5,10 @@ import '@solidfun/shimmer.styles.css'
 import { Title } from '@solidjs/meta'
 import RootLayout from '../RootLayout'
 import { Route } from '@solidfun/route'
-import { InferEnums } from '@solidfun/paramEnums'
-import { type elementEnums } from '@src/lib/vars'
+import type { elementEnums } from '@src/lib/vars'
 import { svg_npm, svg_github } from '@src/lib/svgs'
 import type { InferGETParse } from '@solidfun/types'
+import type { InferEnums } from '@solidfun/paramEnums'
 import { beAsync, beGET, beParse } from '@solidfun/beAsync'
 
 
@@ -96,9 +96,9 @@ function Links() {
         <span>Home</span>
       </A>
 
-      <A path="/fortune" activeClass="active" class="brand">
+      <A path="/fortunes" activeClass="active" class="brand">
         <span>🧚‍♀️</span>
-        <span>Fortune</span>
+        <span>Fortunes</span>
       </A>
 
       <A path="/smooth" activeClass="active" class="brand">
