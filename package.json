@@ -2,7 +2,7 @@
   "name": "create-solidfun",
   "license": "MIT",
   "type": "module",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "author": "Christopher Carrington",
   "bin": {
     "create-solidfun": "./cli.js"
