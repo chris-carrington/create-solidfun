@@ -3,9 +3,17 @@
   "license": "MIT",
   "type": "module",
   "version": "0.0.5",
+  "description": "Wizard to create a solid fun project!",
   "author": "Christopher Carrington",
   "bin": {
     "create-solidfun": "./cli.js"
+  },
+  "bugs": {
+    "url": "https://github.com/chris-carrington/create-solidfun/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chris-carrington/create-solidfun.git"
   },
   "scripts": {
     "prepublishOnly": "npm run build-cli",
@@ -15,8 +23,6 @@
     "publish": "npm publish --access public",
     "build-cli": "fun build local && tsc -p cli.tsconfig.json && (chmod +x cli.js || true)"
   },
-  "keywords": [],
-  "description": "Wizard to create a solid fun project!",
   "devDependencies": {
     "@solid-cli/core": "^0.0.26",
     "@solidjs/meta": "^0.29.4",
@@ -24,6 +30,12 @@
     "@solidjs/start": "^1.1.0",
     "@types/node": "^22.14.1",
     "solid-js": "^1.9.5",
-    "solidfun": "^0.0.32"
-  }
+    "solidfun": "^0.0.33"
+  },
+  "keywords": [
+    "solid",
+    "solidjs",
+    "solid-fun",
+    "wizard"
+  ]
 }

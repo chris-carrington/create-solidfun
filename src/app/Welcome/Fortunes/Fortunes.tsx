@@ -15,27 +15,26 @@ export default new Route({
   layouts: [RootLayout, WelcomeLayout],
   component({ fe }) {
     const forAnimator = new ForAnimator()
-    const [fortunes, setFortunes] = createSignal<string[]>([])
+    const [fortunes, setFortunes] = createSignal<{fortune: string}[]>([])
 
     async function onClick() {
       forAnimator.preFetch()
 
-      // call BE api
       const params = { id: randomBetween(0, allFortunes.length - 1) } 
-      const res = await fe.GET('/api/fortune/:id', {params, bitKey: 'fortune'})
+      const res = await fe.GET('/api/fortune/:id', {params, bitKey: 'fortune'}) // call BE api
 
       if (res.error) alert(res.error.message)
       else if (res.data) {
-        setFortunes([ res.data.fortune, ...fortunes() ]) // bind dom
+        setFortunes([ res.data, ...fortunes() ]) // bind to beginning
         forAnimator.postSet()
       }
     }
 
     return <>
-      <Title>🧚‍♀️ Fortune</Title>
+      <Title>🧚‍♀️ Fortunes</Title>
 
       <main class="fortunes">
-        <div class="title">Fortune 🧚‍♀️</div>
+        <div class="title">Fortunes 🧚‍♀️</div>
 
         <button class="brand gold" onClick={onClick}>
           <Show when={fe.bits.isOn('fortune')} fallback="Click for Fortunes!">
@@ -43,9 +42,9 @@ export default new Route({
           </Show>
         </button>
 
-        <AnimatedFor forAnimator={ forAnimator } items={
+        <AnimatedFor forAnimator={forAnimator} items={
           <For each={fortunes()}>
-            {fortune => <div class="fortune">{fortune}</div>}
+            {({fortune}) => <div class="fortune">{fortune}</div>}
           </For>
         } />
       </main>

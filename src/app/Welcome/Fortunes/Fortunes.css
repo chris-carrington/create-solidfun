@@ -17,12 +17,10 @@ main.fortunes {
   }
 
   .fortune {
-    opacity: 0;
-    transform: translateY(-20px);
     transition: var(--speed);
+    transform: translateY(-2.4rem);
     clip-path: polygon(52% 42%, 55% 42%, 54% 43%, 54% 44%);
     &.in {
-      opacity: 1;
       transform: translateY(0);
       clip-path: polygon(0 0, 0 100%, 100% 100%, 100% 0);
     }
