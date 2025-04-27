@@ -2,7 +2,7 @@
   "name": "create-solidfun",
   "license": "MIT",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "author": "Christopher Carrington",
   "bin": {
     "create-solidfun": "./cli.js"
@@ -12,7 +12,6 @@
     "dev": "fun build local && vinxi dev",
     "build": "vinxi build",
     "start": "vinxi start",
-    "version": "vinxi version",
     "publish": "npm publish --access public",
     "build-cli": "fun build local && tsc -p cli.tsconfig.json && (chmod +x cli.js || true)"
   },
