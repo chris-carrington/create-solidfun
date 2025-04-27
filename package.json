@@ -2,7 +2,7 @@
   "name": "create-solidfun",
   "license": "MIT",
   "type": "module",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Wizard to create a solid fun project!",
   "author": "Christopher Carrington",
   "bin": {
