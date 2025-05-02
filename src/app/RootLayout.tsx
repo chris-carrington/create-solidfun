@@ -2,11 +2,10 @@ import Nav from '@src/Nav/Nav'
 import { Layout } from '@solidfun/layout'
 
 
-export default new Layout({
-  component(props) {
+export default new Layout()
+  .component((fe) => {
     return <>
       <Nav />
-      {props.children}
+      {fe.getChildren()}
     </>
-  }
-})
+  })

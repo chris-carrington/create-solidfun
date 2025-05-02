@@ -4,10 +4,9 @@ import { Route } from '@solidfun/route'
 import WelcomeLayout from './WelcomeLayout'
 
 
-export default new Route({
-  path: '/',
-  layouts: [RootLayout, WelcomeLayout],
-  component() {
+export default new Route('/')
+  .layouts([RootLayout, WelcomeLayout])
+  .component(() => {
     return <>
       <Title>🏡 Home</Title>
 
@@ -19,5 +18,4 @@ export default new Route({
         <li>Layouts, Contexts & Stores are all lovely options to achieve this! ❤️</li>
       </ol>
     </>
-  }
-})
+  })

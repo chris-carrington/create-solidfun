@@ -48,7 +48,7 @@ class Build {
         '@solidjs/router': '^0.15.0',
         '@solidjs/start': '^1.1.0',
         'solid-js': '^1.9.5',
-        solidfun: '^0.0.33',
+        solidfun: '^0.0.37',
         vinxi: '^0.5.3',
       },
       engines: { node: '>=22' },

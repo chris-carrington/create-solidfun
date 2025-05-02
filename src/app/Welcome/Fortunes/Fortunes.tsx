@@ -10,10 +10,9 @@ import { randomBetween } from '@solidfun/randomBetween'
 import { AnimatedFor, ForAnimator } from '@solidfun/animatedFor'
 
 
-export default new Route({
-  path: '/fortunes',
-  layouts: [RootLayout, WelcomeLayout],
-  component({ fe }) {
+export default new Route('/fortunes')
+  .layouts([RootLayout, WelcomeLayout])
+  .component((fe) => {  
     const forAnimator = new ForAnimator()
     const [fortunes, setFortunes] = createSignal<{fortune: string}[]>([])
 
@@ -21,10 +20,12 @@ export default new Route({
       forAnimator.preFetch()
 
       const params = { id: randomBetween(0, allFortunes.length - 1) } 
+
       const res = await fe.GET('/api/fortune/:id', {params, bitKey: 'fortune'}) // call BE api
 
       if (res.error) alert(res.error.message)
-      else if (res.data) {
+
+      if (res.data) {
         setFortunes([ res.data, ...fortunes() ]) // bind to beginning
         forAnimator.postSet()
       }
@@ -36,7 +37,7 @@ export default new Route({
       <main class="fortunes">
         <div class="title">Fortunes 🧚‍♀️</div>
 
-        <button class="brand gold" onClick={onClick}>
+        <button onClick={onClick} disabled={fe.bits.isOn('fortune')} class="brand gold">
           <Show when={fe.bits.isOn('fortune')} fallback="Click for Fortunes!">
             <span class="load-spin--two"></span>
           </Show>
@@ -49,5 +50,4 @@ export default new Route({
         } />
       </main>
     </>
-  }
-})
+  })

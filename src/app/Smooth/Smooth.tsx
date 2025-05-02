@@ -18,10 +18,9 @@ const _earth = beAsync(() => beGET('/api/character/:element', {params: {element:
 const _water = beAsync(() => beGET('/api/character/:element', {params: {element: 'water'}}), 'water')
 
 
-export default new Route({
-  path: '/smooth',
-  layouts: [RootLayout],
-  component() {
+export default new Route('/smooth')
+  .layouts([RootLayout])
+  .component(() => {
     const air = beParse(() => _air())
     const fire = beParse(() => _fire())
     const earth = beParse(() => _earth())
@@ -38,8 +37,7 @@ export default new Route({
         <Links />
       </main>
     </>
-  }
-})
+  })
 
 
 function Notice() {
@@ -71,7 +69,7 @@ function Character({ element }: { element: InferGETParse<'/api/character/:elemen
   return <>
     <div class="character">
       <Suspense fallback={<div class="shimmer"></div>}>
-        { element()?.error?.message || element()?.data?.character }
+        {element()?.error?.message || element()?.data?.character}
       </Suspense>
     </div>
   </>
